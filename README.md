@@ -6,7 +6,7 @@ This project focuses on enhancing LLM performance on Legal questions by integrat
 ## The Workflow: 
 ![Figure 1. The Workflow of Our System](WorkFlow.png)
 
-Our Agents:
+### Our Agents:
 * **Category Agent**: Determine the question (query) type according to LegalBench's taxonomy, and use the prompt in LegalBench.
 * **Difficulty Agent**: Determine the query's difficulty level into [easy, medium, hard].
 * **RAG Agent**: Determine if external information is helpful.
@@ -26,8 +26,6 @@ With the difficulty-level information, we answer those "easy" questions directly
 Then, there are two ways to improve the model performance - RAG and Self-reflection. Basically, self-reflection is a more universally useful solution, while RAG is only useful when external information is helpful. So, we need to ask the **RAG Agent** to see if we need external informaion from the RAG system, otherwise, it passes the data to the Self-reflection LLM.  
 Since we only have Illinois Law data in our RAG database, we use **Illinois Agent** to determine if we want to retrieve documents from RAG or Google Search.  
 
-## Where Improvement:
-
 ## Core Contributions:
 * Benchmark knowledge-Informed Adaptive RAG:
 Inspired by the Adaptive RAG paper, which fine-tuned an LLM classifier to dynamically adjust the retrieval strategy, we take this concept further. Our approach incorporates knowledge from public legal benchmarks (e.g., LegalBench) to enhance the accuracy of the LLM classifier via CoT prompt engineering. This allows the system to more effectively determine when to utilize RAG or other tools based on the predicted difficulty of the question.
@@ -37,6 +35,10 @@ For questions classified as "hard", our system employs ReAct to promote deeper r
 
 * The workflow of course.
 
+## Future works:
+* Fine tuning small LLM model to replace these agent for better running speed and accuracy.
+* The RAPTOR code in the original paper does not explain why they are using UMAP and GMM. They are easy to use, no parameters to adjust, but super slow to run. Other dimensional reduction methods like Autoencoder, and Uncertainty Autoencoder can be possible alternatives to the UMAP algorithm. People generally not recommended to use AE on tabular dataset, but for NLP, maybe it's useful.
+  
 ## Reference
 > [1] Brown, T. B. (2020). Language models are few-shot learners. *arXiv preprint arXiv:2005.14165*.
 
