@@ -14,14 +14,12 @@ This project focuses on enhancing LLM performance on Legal questions by integrat
 
 ### In general, there are two phrases in our workflow. 
 
-[Phrase 1] is about **data enrichment/augmentation**, performance is the main concern: 
-
+#### [Phrase 1] is about **data enrichment/augmentation**, performance is the main concern: 
 **Category Agent**: f(query) = query + category (and prompt of this specific task)  
 **Difficulty Agent**: f(query, catgory) = one of {easy, medium, hard}  
 By doing so, we enrich our input from "query" to (query, category, prompt, difficulty). The model performance are generally getting better because of the few-shot CoT prompt.  
 
-[Phrase 2] is about **division of labor**, we care about both performance and efficiency in this phrase: 
-
+#### [Phrase 2] is about **division of labor**, we care about both performance and efficiency in this phrase: 
 With the difficulty-level information, we answer those "easy" questions directly without calling any other tools, to save time and energy.  
 Then, there are two ways to improve the model performance - RAG and Self-reflection. Basically, self-reflection is a more universally useful solution, while RAG is only useful when external information is helpful. So, we need to ask the **RAG Agent** to see if we need external informaion from the RAG system, otherwise, it passes the data to the Self-reflection LLM.  
 Since we only have Illinois Law data in our RAG database, we use **Illinois Agent** to determine if we want to retrieve documents from RAG or Google Search.  
