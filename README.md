@@ -11,6 +11,7 @@ This project focuses on enhancing LLM performance on Legal questions by integrat
 * Illinois Agent: Determine if the query is about Illinois Law.
 
 In general, there are two phrases in our workflow. 
+
 [Phrase 1] is about **data enrichment/augmentation**: 
 Category Agent: f(query) = query + category (and prompt of this specific task) 
 Difficulty Agent: f(query, catgory) = one of {easy, medium, hard} 
