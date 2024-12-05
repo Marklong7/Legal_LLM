@@ -5,6 +5,23 @@ This project focuses on enhancing LLM performance on Legal questions by integrat
 
 ## The Workflow: 
 ![Figure 1. The Workflow of Our System](WorkFlow.png)
+* Category Agent: Determine the question (query) type according to LegalBench's taxonomy, and use the prompt in LegalBench.
+* Difficulty Agent: Determine the query's difficulty level into [easy, medium, hard].
+* RAG Agent: Determine if external information is helpful.
+* Illinois Agent: Determine if the query is about Illinois Law.
+
+In general, there are two phrases in our workflow. 
+[Phrase 1] is about **data enrichment/augmentation**: 
+Category Agent: f(query) = query + category (and prompt of this specific task) 
+Difficulty Agent: f(query, catgory) = one of {easy, medium, hard} 
+By doing so, we enrich our input from "query" to (query, category, prompt, difficulty). The model performance are generally getting better because of the few-shot CoT prompt.
+
+[Phrase 2] is about **division of labor**, we care about both performance and efficiency in this phrase: 
+With the difficulty-level information, we answer those "easy" questions directly without calling any other tools, to save time and energy. 
+Then, there are two ways to improve the model performance - RAG and Self-reflection. Basically, self-reflection is a more universally useful solution, while RAG is only useful when external information is helpful. So, we need to ask the RAG Agent to see if we need external informaion from the RAG system, otherwise, it passes the data to the Self-reflection LLM. 
+Since we only have Illinois Law data in our RAG database, we also have an Illinois Agent, to determine if we want to retrieve from RAG or Google Search.
+
+## Where Improvement:
 
 ## Core Contributions:
 * Benchmark knowledge-Informed Adaptive RAG:
@@ -12,6 +29,8 @@ Inspired by the Adaptive RAG paper, which fine-tuned an LLM classifier to dynami
 
 * ReAct and advanced RAG for Complex Questions:
 For questions classified as "hard", our system employs ReAct to promote deeper reasoning.  This involves strategically combining ReAct with techniques like RAPTOR, Google Search, and self-reflection to gather and synthesize relevant information. RAPTOR is essentially a data augmentation technique, it enhances RAG performance by clustering-summarizing to generate additional documents with high-level information. We rewrite the code of RAPTOR, optimized for GPU acceleration and parallelism to improve efficiency.
+
+* The workflow of course.
 
 ## Reference
 > [1] Brown, T. B. (2020). Language models are few-shot learners. *arXiv preprint arXiv:2005.14165*.
