@@ -12,7 +12,7 @@ What these Agents do:
 * RAG Agent: Determine if external information is helpful.
 * Illinois Agent: Determine if the query is about Illinois Law.
 
-#### In general, there are two phrases in our workflow. 
+### In general, there are two phrases in our workflow. 
 
 [Phrase 1] is about **data enrichment/augmentation**: 
 
