@@ -1,7 +1,9 @@
 # Legal_LLM
 
 ## Project Summary:
-This project focuses on enhancing LLM performance on Legal questions by integrating advanced techniques such as few-shot prompt engineering, Chain-of-Thought (CoT) prompting, ReAct, adaptive RAG, and RAPTOR. Our system achieves a significant 110% improvement over baseline models on Illinois Law question-answering.
+This project focuses on enhancing LLM performance on Legal questions by integrating advanced techniques such as *few-shot prompt engineering*, *Chain-of-Thought (CoT) prompting*, *ReAct*, *adaptive RAG*, and *RAPTOR*. Our system achieves a significant 110% improvement over baseline models on Illinois Law question-answering.
+
+## The Workflow: 
 
 ## Core Contributions:
 * Benchmark knowledge-Informed Adaptive RAG:
@@ -12,7 +14,11 @@ For questions classified as "hard", our system employs ReAct to promote deeper r
 
 ## Reference
 > [1] Brown, T. B. (2020). Language models are few-shot learners. *arXiv preprint arXiv:2005.14165*.
+
 > [2] Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., ... & Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. *Advances in Neural Information Processing Systems*, 35, 24824–24837.
+
 > [3] Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). React: Synergizing reasoning and acting in language models. *arXiv preprint arXiv:2210.03629*.
+
 > [4] Jeong, S., Baek, J., Cho, S., Hwang, S. J., & Park, J. C. (2024). Adaptive-rag: Learning to adapt retrieval-augmented large language models through question complexity. *arXiv preprint arXiv:2403.14403*.
+
 > [5] Sarthi, P., Abdullah, S., Tuli, A., Khanna, S., Goldie, A., & Manning, C. D. (2024). Raptor: Recursive abstractive processing for tree-organized retrieval. *arXiv preprint arXiv:2401.18059*.
