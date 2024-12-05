@@ -4,6 +4,7 @@
 This project focuses on enhancing LLM performance on Legal questions by integrating advanced techniques such as *few-shot prompt engineering*, *Chain-of-Thought (CoT) prompting*, *ReAct*, *adaptive RAG*, and *RAPTOR*. Our system achieves a significant 110% improvement over baseline models on Illinois Law question-answering.
 
 ## The Workflow: 
+![Figure 1. The Workflow of Our System](WorkFlow.png)
 
 ## Core Contributions:
 * Benchmark knowledge-Informed Adaptive RAG:
