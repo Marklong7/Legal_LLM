@@ -24,6 +24,8 @@ With the difficulty-level information, we answer those "easy" questions directly
 Then, there are two ways to improve the model performance - RAG and Self-reflection. Basically, self-reflection is a more universally useful solution, while RAG is only useful when external information is helpful. So, we need to ask the **RAG Agent** to see if we need external informaion from the RAG system, otherwise, it passes the data to the Self-reflection LLM.  
 Since we only have Illinois Law data in our RAG database, we use **Illinois Agent** to determine if we want to retrieve documents from RAG or Google Search.  
 
+## Benchmark Analysis: 
+
 ## Core Contributions:
 * Benchmark knowledge-Informed Adaptive RAG:
 Inspired by the Adaptive RAG paper, which fine-tuned an LLM classifier to dynamically adjust the retrieval strategy, we take this concept further. Our approach incorporates knowledge from public legal benchmarks (e.g., LegalBench) to enhance the accuracy of the LLM classifier via CoT prompt engineering. This allows the system to more effectively determine when to utilize RAG or other tools based on the predicted difficulty of the question.
