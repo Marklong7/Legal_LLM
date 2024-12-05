@@ -6,7 +6,7 @@ This project focuses on enhancing LLM performance on Legal questions by integrat
 ## The Workflow: 
 ![Figure 1. The Workflow of Our System](WorkFlow.png)
 
-What these Agents do:
+Our Agents:
 * **Category Agent**: Determine the question (query) type according to LegalBench's taxonomy, and use the prompt in LegalBench.
 * **Difficulty Agent**: Determine the query's difficulty level into [easy, medium, hard].
 * **RAG Agent**: Determine if external information is helpful.
