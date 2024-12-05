@@ -14,7 +14,7 @@ What these Agents do:
 
 ### In general, there are two phrases in our workflow. 
 
-[Phrase 1] is about **data enrichment/augmentation**: 
+[Phrase 1] is about **data enrichment/augmentation**, performance is the main concern: 
 
 Category Agent: f(query) = query + category (and prompt of this specific task)  
 Difficulty Agent: f(query, catgory) = one of {easy, medium, hard}  
