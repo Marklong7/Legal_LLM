@@ -35,6 +35,9 @@ For questions classified as "hard", our system employs ReAct to promote deeper r
 
 * The workflow of course.
 
+## Limitations:
+* We have only a part of Illinois Law documents in our RAG system.
+
 ## Future works:
 * Fine tuning small LLM model to replace these agent for better running speed and accuracy.
 * The RAPTOR code in the original paper does not explain why they are using UMAP and GMM. They are easy to use, no parameters to adjust, but super slow to run. Other dimensional reduction methods like Autoencoder, and Uncertainty Autoencoder can be possible alternatives to the UMAP algorithm. People generally not recommended to use AE on tabular dataset, but for NLP, maybe it's useful.
